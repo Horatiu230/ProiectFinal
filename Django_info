@@ -1,0 +1,69 @@
+1. Create a new project with Django
+
+* Verify the PIP version (package manager installer):
+    - "pip --version"
+
+* Creating the new environment in our newly created project:
+    - "py -m venv env"
+    - py or python - windows
+    - python3 - mac/linux
+    - venv - virtual environment/env - name of the environment
+
+* Activate/deactivate the environment:
+    - windows: ".\env\Scripts\activate"
+    - mac/linux: "source env/bin/activate"
+    - deactivate: deactivate
+
+* Install Django:
+    - windows: "py -m pip install Django"
+    - mac/linux: "python3 -m pip install Django"
+
+* Change the interpreter to our environment:
+    1. Click on the interpreter(bottom right) and select: "Interpreter Settings..."
+    2. In the "Python Interpreter:" field, click the dropdown and "Show All..."
+    3. In the new window, click on the "+" sign(top left)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
