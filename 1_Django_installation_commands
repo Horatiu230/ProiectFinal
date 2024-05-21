@@ -1,4 +1,4 @@
-1. Create a new project with Django
+1. Create a new repository on Git and copy the link into the VCS, and clone the project.
 
 * Verify the PIP version (package manager installer):
     - "pip --version"
@@ -22,6 +22,8 @@
     1. Click on the interpreter(bottom right) and select: "Interpreter Settings..."
     2. In the "Python Interpreter:" field, click the dropdown and "Show All..."
     3. In the new window, click on the "+" sign(top left)
+    4. Choose existent interpreter (from env/Scripts/python.exe)
+    5. Check the mark and associate with current project
 
 
 
