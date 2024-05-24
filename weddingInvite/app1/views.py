@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+from weddingInvite.app1.models import ConfirmationOfPresence
 
-# Create your views here.
+
+class GuestsView(ListView):
+    model = ConfirmationOfPresence
+    template_name = 'app1/guests_index.html'

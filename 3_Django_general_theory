@@ -1,2 +1,11 @@
-Here we will go through each of the python files created in a project, automatically, plus other useful information
+MVT design:
+
+USER -> DJANGO WEBSITE -> URL -> VIEW <--> MODEL
+                                   |
+                                   |
+                                TEMPLATE(HTML)
+
+* Model - responsible for handling data related logic. It represent the data structure of the DB
+* View - responsible for handling user interface logic and processing user inputs
+* Template - responsible for presentation logic. It defines how the data from the models should be displayed to the user
 

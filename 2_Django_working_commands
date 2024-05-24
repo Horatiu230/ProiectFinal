@@ -1,0 +1,128 @@
+* Create a Django project:
+    - "django-admin startproject weddingInvite" , where "weddingInvite" is the name of my project
+
+* Create a new part of the application:
+    - "py manage.py startapp app1", where "app1" is the name of my module in the general project
+    - so, weddingInvite - project, app1 - module of the project
+    - the modules are used for a better control of different parts of the application
+    - the modules are scalable, and they can be reused in other projects
+
+
+* Files contained in the main project folder:
+    - "__init__" file is actually a module, that's why we have init
+    -  "asgi.py" - something related to production deployment to a cloud service
+    -  "wsgi" - web server gateway interface, also configuration for the production deployment(from local to a server)
+    - "settings": configuration for our whole website
+        - SECRET KEY - each new project hold a unique secret key
+        - "ALLOWED HOSTS" - a list of strings which holds the domain for our website
+        - "INSTALLED_APPS" - the modules of the application go written in here
+        - etc
+
+
+--A LOGICAL ORDER OF SETTING UP THE NEW PROJECT and other info--
+
+* The main project, "weddingInvite" in my case, has some files:
+    - "urls.py" (URL ROUTER)- routes to different url's in my app, so different pages can be accessed, in a general way,
+      but each new module will have it's own "urls.py", which help communication within that module; so, the project's "urls.py", makes
+      the communications possible between modules (app1, sign in, etc)
+
+
+* CREATING THE NEW MODULE (app1/other..) of the application:
+    - after creating a new module in the application, it is created with the same files, as the parent project, and some extra:
+      migrations, admin, models, tests, views, urls.py(created by us)
+
+    - "migrations" package - where the transformation of my model files is made in an sql accessible format
+    - "admin" - admin module, ex: wordpress has a c panel, where we can administrate the page that we are building
+    - "apps" - here my app1 is actually treated as an application
+    - "models" - the information contained in the table headers from DB will be contained here
+                 which will be modified by django into the tables that go into the "migrations" package
+    - "views" - here the logic of the applications is made: connection with db, etc
+
+
+* ORM concept - Object Relational Mapper- it's django's way (language) to communicate with the DB through it's own particular language
+
+* Run the application:
+    - windows: "py manage.py runserver"
+    - max/linux: "python3 manage.py runserver"
+    - Ctrl+click on the link in the terminal to open the application in browser
+
+* Open/install sqllite3 and open the sql file from the project
+* Create a new folder called "templates" which will contain the HTML files (in the weddingInvite main project)
+* Create a new folder called "static" which will contain the CSS and JS files (in the weddingInvite main project)
+
+* After, in "settings" file, we must:
+    - in the "INSTALLED_APPS" list, we must add our module (app1) in my case and any other when created
+    - in the "TEMPLATES" list/dictionary, in the "DIRS", I pass "templates/" - templates being the file, it will look for files in that directory,
+      that is why I have the slash
+    - under the " STATIC_URL = 'static/' ", I pass: " STATICFILES_DIRS = (os.path.join(BASE_DIR), 'static') "
+            - os.path.join(BASE_DIR) - This adds the root directory of your project to the list of static file directories.
+            - 'static' - This adds a subdirectory named “static” within your project directory to the list of static file directories.
+            - so in other words: go at root level of the project and attach the "static" directory (static being a directory, not a package, that's why we need to add it)
+
+* There are two commands that we use after we create new data in the "models" file (with the server running, open a new cmd instance with the same path as the first one):
+    - "py manage.py makemigrations" - creation of the migrations
+    - "py manage.py migrate" - actually migrate them, and I have some new tables in sql lite now, that come implicitly come from Django(reopen sql file to see changes)
+
+* Creating the first user(SUPERUSER):
+    - "py manage.py createsuperuser", then introduce the username: horatiu23, email: gmail, pswd: Noi...
+    -  An there we have it, we created our first superuser, who can be the beneficiary of the app, not necessary a technical person
+
+* Creating the first class in the "models" file, which will be changed by django into readable format by sql(this ORM)
+    - the str method is used to have a message inside the console, not just a memory location
+    - then we run "py manage.py makemigrations" and "py manage.py migrate" as we said earlier
+
+* Then, we create the project's urls, which routes between the applications created, which have their own urls.py
+  - in the parent urls I must include the app(module): "path('guests/', include('app1.urls'))"
+  - then, in the module urls, I must include a variable name: "app_name = 'guests'" which means that everything that will be inside
+    this urls.py file will be displayed at guests/....in the browser's url.
+
+  - "path('', views.GuestsView.as_view(), name='guest_list')"
+        - '' - empty urls because the base url will be the "guests"
+        - "views" - imported from the app1(the module)
+        - "GuestsView" - class that will be created inside the views file in app1
+        - "as_view" - method that shows us that "GuestsView" is a class
+        - "name" argument - will be passed inside the HTML file
+
+* Then I create the GuestsView class, with it's one variables(model, template, fields, etc)
+* Then I create the HTML file that will be passed as value to the template_name variable (in the templates folder)
+    - a base HTML directly in the templates folder(for things that stay the same across all the pages)
+    - a new sub folder created in the templates folder with the name of my app(app1)
+
+* DTL - Django Template Language:
+    - we create and complete the base class
+    - {%  %} -> this way I can add references
+    - {{  }} -> this way I can add variables (ex: city, country)
+
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

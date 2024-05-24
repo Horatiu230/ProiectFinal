@@ -1,0 +1,89 @@
+Ideea aplicatiei mele este de a fi un serviciu cu invitatie si confirmare/infirmare prezenta eveniment.
+Exista insa doua perspective din care privesc aplicatia si anume:
+
+1. Din perspectiva unei companii care vinde aplicatia
+2. Din perspectiva mea de utilizator care cumpara aplicatia si trimite un link mai departe invitatilor, pt a confirma
+
+    - eu am sa am user si parola de utilizator:
+        - schimbare parola,
+        - api locatie petrecere/Biserica,
+        - schimbare limba,
+        - serv trm mesaj la confirmare/email
+        - formular completare cu validari pe fiecare camp in functie e date cu buton save, edit, poate?
+
+    - cei care foloseste aplicatia, invitatii
+
+
+Structura proiect:
+
+    * Pagina log-in/schimbare parola
+
+    * Homepage:
+        - invitatia afisata in prima pagina (sau alegere modele invitatie)
+        - meniu navbar cu butoane (locatie petrecere, locatie Biserica, confirma aici)
+
+    * Buton de confirmare aici care ne duce pe formular de completare date:
+        - Nume,
+        - Prenume,
+        - Email,
+        - Nr. telefon,
+        - Nr. persoane (vad cum fac cu campurile, pt cand am mai multe persoane, cer doar la una toate datele, restul doar nume si prenume)
+        - Nr. adulti
+        - Nr. copii
+        - Judet
+
+        - optiune de schimbare limba (engleza, italiana)
+
+
+PROBLEMS THAT OCCURRED:
+
+* 1 - After deleting a table from my DB, when I try to makemigrations and migrate, the tables is not created, because the history of the
+  migration, remains.()
+
+  1 - Solution:
+    - "python manage.py makemigrations" - if "No changes detected" message is displayed, all good
+    - "python manage.py showmigrations" - this way I see all the changes made
+    - "python manage.py migrate --fake nameoftheapp zero" - this will unapply all the migrations for the app
+    - "python manage.py migrate" - now the table should be created again in the DB !
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
