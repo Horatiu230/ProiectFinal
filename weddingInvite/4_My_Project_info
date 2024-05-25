@@ -35,11 +35,12 @@ Structura proiect:
         - optiune de schimbare limba (engleza, italiana)
 
 
+
+
 PROBLEMS THAT OCCURRED:
 
 * 1 - After deleting a table from my DB, when I try to makemigrations and migrate, the tables is not created, because the history of the
   migration, remains.()
-
   1 - Solution:
     - "python manage.py makemigrations" - if "No changes detected" message is displayed, all good
     - "python manage.py showmigrations" - this way I see all the changes made
@@ -47,7 +48,8 @@ PROBLEMS THAT OCCURRED:
     - "python manage.py migrate" - now the table should be created again in the DB !
 
 
-
+* 2 - If I open the project like Proiect final/weddingInvite, the imports that are made in views and app1/urls, won't work as expected
+  2 - Solution: instead, open directly the folder that django created when creating the new project, in my case: weddingInvite
 
 
 

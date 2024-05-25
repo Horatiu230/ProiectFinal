@@ -57,7 +57,7 @@
     - under the " STATIC_URL = 'static/' ", I pass: " STATICFILES_DIRS = (os.path.join(BASE_DIR), 'static') "
             - os.path.join(BASE_DIR) - This adds the root directory of your project to the list of static file directories.
             - 'static' - This adds a subdirectory named “static” within your project directory to the list of static file directories.
-            - so in other words: go at root level of the project and attach the "static" directory (static being a directory, not a package, that's why we need to add it)
+            - so in other words: go to root level of the project and attach the "static" directory (static being a directory, not a package, that's why we need to add it)
 
 * There are two commands that we use after we create new data in the "models" file (with the server running, open a new cmd instance with the same path as the first one):
     - "py manage.py makemigrations" - creation of the migrations

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<!--{% load static %}-->
 <html lang="en">
     <head>
         {% block title %}
         {% endblock %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!--        <link rel="stylesheet" href="{% static 'custom.css'%}" type="text/css" >-->
     </head>
 
     <body>
@@ -11,7 +13,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <nav>
-                        <a class="btn" href="/admin">Admin</a>
+                        <a class="btn btn-sm btn-info" href="/admin">Admin</a>
                     </nav>
                 </div>
             </div>
