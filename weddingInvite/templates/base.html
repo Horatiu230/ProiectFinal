@@ -1,23 +1,61 @@
 <!DOCTYPE html>
-<!--{% load static %}-->
+{% load static %}
 <html lang="en">
     <head>
-        {% block title %}
-        {% endblock %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<!--        <link rel="stylesheet" href="{% static 'custom.css'%}" type="text/css" >-->
-    </head>
 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'custom.css'%}" type="text/css" >
+    </head>
     <body>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <nav>
-                        <a class="btn btn-sm btn-info" href="/admin">Admin</a>
+                        <div style="display: flex; align-content:center">
+                            <a class="btn btn-sm btn-info" href="/admin">Admin</a>
+                            <a class="btn btn-sm btn-dark" href="{% url 'guests:guest_list' %}">Guests</a>
+                            <form action="{% url 'logout' %}" method="post">
+                                {% csrf_token %}
+                                <button class="btn btn-sm btn-danger" type="submit">Logout</button>
+                            </form>
+                        </div>
                     </nav>
                 </div>
             </div>
         </div>
+        {% block title %}
+        {% endblock %}
     </body>
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

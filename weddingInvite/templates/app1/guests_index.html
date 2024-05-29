@@ -1,21 +1,50 @@
 {% extends 'base.html' %}
 {% block title %}
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Index</th>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Email</th>
-                <th>Phone number</th>
-                <th>Adults number</th>
-                <th>Kids number</th>
-                <th>Region</th>
-                <th>Active</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-    </table>
+    <div>
+        <a class="btn btn-sm btn-success" href="{% url 'guests:add' %}">Add</a>
+<!--        <div class="card">-->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Email</th>
+                        <th>Phone number</th>
+                        <th>Adults number</th>
+                        <th>Kids number</th>
+                        <th>Region</th>
+                        <th>Active</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for item in confirmationofpresence_list %}
+                        <tr>
+                            <td>1</td>
+                            <td> {{ item.first_name }} </td>
+                            <td> {{ item.last_name }} </td>
+                            <td> {{ item.email }}</td>
+                            <td> {{ item.phone_number }}</td>
+                            <td> {{ item.adults_number }}</td>
+                            <td> {{ item.kids_number }}</td>
+                            <td> {{ item.region }}</td>
+                            <td> {{ item.active }}</td>
+                            <td>
+                                <a class="btn btn-sm btn-warning" href="{% url 'guests:update' item.id %}">Update</a>
+                                {% if item.active %}
+                                    <a class="btn btn-sm btn-danger" href="{% url 'guests:delete' item.id %}">Delete</a>
+                                {% else %}
+                                    <a class="btn btn-sm btn-info" href="{% url 'guests:activate' item.id %}">Activate</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+<!--            </div>-->
+    </div>
 {% endblock %}
 
 

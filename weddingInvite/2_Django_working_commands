@@ -92,8 +92,13 @@
     - we create and complete the base class
     - {%  %} -> this way I can add references
     - {{  }} -> this way I can add variables (ex: city, country)
+    - everytime I want to make a post, I need to use csrf token
+    - when I use {{form}}, it automatically gets the fields from the db
+    - {{field.errors}} - so when I try to introduce some incompatible data, I get an error
 
-*
+* SQL alchemy, information where we can see the sql writing and orm also, compared
+
+
 
 
 
