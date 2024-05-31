@@ -60,12 +60,31 @@ PROBLEMS THAT OCCURRED:
 
 
 Intrebari:
-1. dupa Login, sa merg pe o pagina principala de home
-2. cum pot face legarea informatiilor din html invitatie cu form, a.i. sa se modifice?
+Tabel, ce tip de data sa pun in el?
+1. dupa Login, sa merg pe o pagina principala de home (e ok cum am facut- sau alt fel??)
+2. Cum pot face legarea informatiilor din html invitatie cu form, a.i. sa se modifice?
 3. Admin si logout o sa le las pe toate paginile, cele ce tin de mine, pt invitat, nu o sa se vada
-4.
+4. Ce tabele ar mai trebui sa fac in db? completare date pentru invitatie?
+5. La html, pot sa leg fiecare pagina de o pagina de css?
 
+In prima faza incerc sa desenez cardurile la invitatii cu 4 poze in spate. Cred.
+Caut sa vad cum pot sa modific tabel din comenzi, nu manual...
+Atentie sa pun varchar eventual la nr tel si nr copil
 
+click pe poza, href=object.id, ca sa asociez cumva id cu invitatia mea
+
+Clasa DetailView , cand dau click ma duce pe pag html pe care vreau sa vad...hai ca o descos eu
+
+Atentie la tema fundal, ca sa arate bine, sa fie stilizata frumos
+Posibilitate de creare cont, pentru membrii noi (miri, gen)
+Deci eu sunt admin aplicatie, iar utilizatorii isi vor crea conturi, eu sunt superuser, iar ceilalti vor fi useri normali, cred
+
+Azi 30.05.2024:
+Login:
+- adaugare card
+- adaugare umbre
+- adaugare font-uri google
+- adaugare username, password, etc ca si text de fundal
 
 
 

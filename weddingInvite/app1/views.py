@@ -1,15 +1,17 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.generic import ListView, CreateView, UpdateView
 from app1.models import ConfirmationOfPresence
 
 
-class GuestsView(ListView):
+class GuestsView(LoginRequiredMixin, ListView):
     model = ConfirmationOfPresence
     template_name = 'app1/guests_index.html'
 
 
-class CreateGuestsView(CreateView):
+class CreateGuestsView(LoginRequiredMixin, CreateView):
     model = ConfirmationOfPresence
     fields = ['first_name', 'last_name', 'email', 'phone_number',
               'adults_number', 'kids_number', 'region']
@@ -19,7 +21,7 @@ class CreateGuestsView(CreateView):
         return reverse('guests:guest_list')
 
 
-class UpdateGuestsView(UpdateView):
+class UpdateGuestsView(LoginRequiredMixin, UpdateView):
     model = ConfirmationOfPresence
     fields = ['first_name', 'last_name', 'email', 'phone_number',
               'adults_number', 'kids_number', 'region']
@@ -29,17 +31,25 @@ class UpdateGuestsView(UpdateView):
         return reverse('guests:guest_list')
 
 
+@login_required
 def delete_location(request, pk):
     ConfirmationOfPresence.objects.filter(id=pk).update(active=False)
     return redirect('guests:guest_list')
 
 
-
+@login_required
 def activate_location(request, pk):
     ConfirmationOfPresence.objects.filter(id=pk).update(active=True)
     return redirect('guests:guest_list')
 
 
+@login_required
+def home_page(request):
+    context = {}
+    return render(request, 'app1/home.html', context)
+
+
+"""clasa de TemplateView pot sa folosesc ca sa nu am nevoie de model, pt ca aici nu am model"""
 
 
 

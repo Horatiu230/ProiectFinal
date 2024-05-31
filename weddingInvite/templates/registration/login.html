@@ -1,12 +1,28 @@
 {% extends 'base.html' %}
 {% block title %}
-    <form method="post">
+<form method="post" xmlns:text-decoration="http://www.w3.org/1999/xhtml">
         {% csrf_token %}
-        <div class="col-md-6 offset-md-3">
-            <label>Username:<input class="form-control" type="text" name="username"></label>
-            <label>Password:<input class="form-control" type="password" name="password"></label>
-            <button type="submit" class="btn btn-info">Login</button>
-            <span style="color: red">{{ form.non_field_errors }}</span>
+        <div class="container-login">
+            <div class="card-login">
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input class="form-control" type="text" id="username" name="username" placeholder="Enter your username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input class="form-control" type="password" id="password" name="password" placeholder="Enter your password">
+                </div>
+
+                <button type="submit" class="btn-style">Login</button>
+                <a class="btn-style" href="/admin">Admin</a>
+
+                <div>
+                    <span style="color: #af1313">{{ form.non_field_errors }}</span>
+                </div>
+            </div>
         </div>
     </form>
 {% endblock %}
+

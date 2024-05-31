@@ -1,0 +1,64 @@
+form {
+    font-family: "Roboto", sans-serif;
+}
+
+.card-login {
+    background-image: url('background.jpg');
+    padding: 50px;
+    background-color: #9ddbf0;
+    min-width: 400px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-weight: 450;
+    font-size: 14px;
+}
+
+/* Style the login button */
+.btn-style {
+    display: inline-block;
+    background-color: #ebabab;
+    color: black;
+    padding: 5px 20px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: calc(100%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    font-weight: 450;
+    text-decoration: none;
+    text-align: center
+}
+
+/* Hover effect: darken the background color */
+.btn-style:hover {
+    background-color: #53b564;
+    font-weight: 450;
+}
+
+.form-control {
+    width: calc(100%);
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    font-weight: 350;
+    font-size: 14px;
+}
+
+.form-control:hover {
+    background-color: #f0f1f5;
+}
+
+.form-group {
+    margin-top: 10px;
+}
+
