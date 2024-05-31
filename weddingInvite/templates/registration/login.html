@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}
-<form method="post" xmlns:text-decoration="http://www.w3.org/1999/xhtml">
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'login.css' %}" type="text/css" >
+</head>
+
+<form method="post">
         {% csrf_token %}
         <div class="container-login">
             <div class="card-login">

@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, TemplateView
 from app1.models import ConfirmationOfPresence
 
 
@@ -43,13 +43,10 @@ def activate_location(request, pk):
     return redirect('guests:guest_list')
 
 
-@login_required
-def home_page(request):
-    context = {}
-    return render(request, 'app1/home.html', context)
+class HomePage(LoginRequiredMixin, TemplateView):
+    template_name = 'app1/home.html'
 
 
-"""clasa de TemplateView pot sa folosesc ca sa nu am nevoie de model, pt ca aici nu am model"""
 
 
 

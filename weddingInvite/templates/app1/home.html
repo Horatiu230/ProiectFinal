@@ -1,20 +1,39 @@
 {% extends 'base.html' %}
 {% block title %}
+{% load static %}
 <head>
-    <title>Wedding Invitation</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'invitation.css' %}" type="text/css" >
 </head>
+
 <body>
-    <div class="container-fluid">
-        <div class="jumbotron text-center">
-            <h1 class="display-4">You're Invited!</h1>
-            <p class="lead">Join us for the wedding celebration of</p>
-            <h2>Mircea & Andreea</h2>
-            <p class="lead">Date: October 10, 2024</p>
-            <p class="lead">Time: 3:00 PM</p>
-            <p class="lead">Venue: Beautiful Garden Venue</p>
+    <div class="invitation-container">
+            <div class="invitation">
+                <h1>Cu inimile pline de emoție și bucurie, noi</h1>
+                <h2>Mireasă & Mire</h2>
+                <p>Vă invităm să fiți alături de noi la celebrarea căsătoriei noastre.</p>
+                <div class="event-date">
+                    <p>Data Evenimentului:</p>
+                    <p><strong>29 mai 2025</strong></p>
+                </div>
+                <div class="parents">
+                    <p>Alături ne vor fi părinții:</p>
+                    <p><strong>Părinți mireasă și Părinți mire</strong></p>
+                </div>
+                <div class="godfather-godmother">
+                    <p>Și nașii:</p>
+                    <p><strong>Nașul & Nașa</strong></p>
+                </div>
+                <div class="church">
+                    <p>Ne vom cununa religios la:</p>
+                    <p><strong>Biserica "numele Bisericii"</strong></p>
+                </div>
+                <div class="party">
+                    <p>Vom petrece împreună la <strong>Creative Ality</strong> la ora 14:00</p>
+                    <p>Vă așteptăm cu drag!</p>
+                </div>
+            </div>
         </div>
-    </div>
 </body>
 
 {% endblock %}
