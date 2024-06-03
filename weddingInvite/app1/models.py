@@ -4,16 +4,31 @@ from django.db import models
 
 
 class ConfirmationOfPresence(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    prenume = models.CharField(max_length=100)
+    nume = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
-    phone_number = models.IntegerField()
-    adults_number = models.IntegerField()
-    kids_number = models.IntegerField()
-    region = models.CharField(max_length=50)
+    număr_telefon = models.CharField(max_length=30)
+    număr_adulți = models.IntegerField()
+    număr_copii = models.IntegerField()
     active = models.BooleanField(default=True)
 
     def __str__(self):
-        return f'{self.first_name} -> {self.last_name}'
+        return f'{self.prenume} -> {self.nume}'
 
+
+class PersonalizedInvitation(models.Model):
+    nume_mireasă = models.CharField(max_length=100)
+    nume_mire = models.CharField(max_length=100)
+    dată_eveniment = models.DateField()
+    părinții_miresei = models.CharField(max_length=100)
+    părinții_mirelui = models.CharField(max_length=100)
+    nume_nașă = models.CharField(max_length=100)
+    nume_naș = models.CharField(max_length=100)
+    nume_biserică = models.CharField(max_length=100)
+    ora_cununie_religioasă = models.TimeField()
+    local_petrecere = models.CharField(max_length=100)
+    ora_petrecere = models.TimeField()
+
+    def __str__(self):
+        return f'{self.nume_mireasă} -> {self.nume_mire}'
 

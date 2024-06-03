@@ -6,6 +6,7 @@ app_name = 'guests'
 
 urlpatterns = [
     path('', views.GuestsView.as_view(), name='guest_list'),
+    path('personalize/', views.CreatePersonalizedInvitationView.as_view(), name='personalized_invitation'),
     path('add/', views.CreateGuestsView.as_view(), name='add'),
     path('<int:pk>/update/', views.UpdateGuestsView.as_view(), name='update'),
     path('<int:pk>/delete/', views.delete_location, name='delete'),
