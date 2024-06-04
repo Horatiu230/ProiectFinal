@@ -6,14 +6,13 @@
                 <thead>
                     <tr>
                         <th>Index</th>
-                        <th>First name</th>
-                        <th>Last name</th>
+                        <th>Prenume</th>
+                        <th>Nume</th>
                         <th>Email</th>
-                        <th>Phone number</th>
-                        <th>Adults number</th>
-                        <th>Kids number</th>
-                        <th>Region</th>
-                        <th>Active</th>
+                        <th>Număr telefon</th>
+                        <th>Număr adulți</th>
+                        <th>Număr copii</th>
+                        <th>Activ</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -22,13 +21,12 @@
                     {% for item in confirmationofpresence_list %}
                         <tr>
                             <td>1</td>
-                            <td> {{ item.first_name }} </td>
-                            <td> {{ item.last_name }} </td>
+                            <td> {{ item.prenume }} </td>
+                            <td> {{ item.nume }} </td>
                             <td> {{ item.email }}</td>
-                            <td> {{ item.phone_number }}</td>
-                            <td> {{ item.adults_number }}</td>
-                            <td> {{ item.kids_number }}</td>
-                            <td> {{ item.region }}</td>
+                            <td> {{ item.număr_telefon }}</td>
+                            <td> {{ item.număr_adulți }}</td>
+                            <td> {{ item.număr_copii }}</td>
                             <td> {{ item.active }}</td>
                             <td>
                                 <a class="btn btn-sm btn-warning" href="{% url 'guests:update' item.id %}">Update</a>

@@ -29,6 +29,26 @@ class CreatePersonalizedInvitationView(LoginRequiredMixin, CreateView):
     template_name = 'app1/invitation_form.html'
 
     def get_success_url(self):
+        return reverse('guests:modified_invitation')
+
+
+class CreatedModifiedInvitationView(LoginRequiredMixin, ListView):
+    model = PersonalizedInvitation
+    fields = ['nume_mireasă', 'nume_mire', 'dată_eveniment', 'părinții_miresei', 'părinții_mirelui',
+              'nume_nașă', 'nume_naș', 'nume_biserică', 'ora_cununie_religioasă', 'local_petrecere', 'ora_petrecere']
+    template_name = 'app1/invitation_modified.html'
+
+    def get_success_url(self):
+        return reverse('guests:modified_invitation')
+
+
+class UpdateInviteView(LoginRequiredMixin, UpdateView):
+    model = PersonalizedInvitation
+    fields = ['nume_mireasă', 'nume_mire', 'dată_eveniment', 'părinții_miresei', 'părinții_mirelui',
+              'nume_nașă', 'nume_naș', 'nume_biserică', 'ora_cununie_religioasă', 'local_petrecere', 'ora_petrecere']
+    template_name = 'app1/invitation_form.html'
+
+    def get_success_url(self):
         return reverse('guests:personalized_invitation')
 
 

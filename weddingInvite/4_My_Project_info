@@ -81,19 +81,23 @@ Deci eu sunt admin aplicatie, iar utilizatorii isi vor crea conturi, eu sunt sup
 
 Azi 30.05.2024:
 Login:
-- adaugare card
-- adaugare umbre
-- adaugare font-uri google
-- adaugare username, password, etc ca si text de fundal
+- adaugare card-da
+- adaugare umbre-da
+- adaugare font-uri google-da
+- adaugare username, password, etc ca si text de fundal-da
 
 
 
 1. De ce preia stiluri din pagina base, chiar daca am create stiluri separate numai pentru pagina de home, de exemplu?
+2. Cum cobor div-card-ul de la form invitatie mai jos? pare sa nu il pot cobori
 
 
 
 
-
+DE FACUT:
+- incerc sa leg html cu form-ul si creez link nou spre pagina modificata
+- adaug module shchimbare parola cu modificarile de pagini html si css aferente
+-
 
 
 

@@ -19,15 +19,15 @@ class ConfirmationOfPresence(models.Model):
 class PersonalizedInvitation(models.Model):
     nume_mireasă = models.CharField(max_length=100)
     nume_mire = models.CharField(max_length=100)
-    dată_eveniment = models.DateField()
+    dată_eveniment = models.CharField(max_length=100)
     părinții_miresei = models.CharField(max_length=100)
     părinții_mirelui = models.CharField(max_length=100)
     nume_nașă = models.CharField(max_length=100)
     nume_naș = models.CharField(max_length=100)
     nume_biserică = models.CharField(max_length=100)
-    ora_cununie_religioasă = models.TimeField()
+    ora_cununie_religioasă = models.CharField(max_length=100)
     local_petrecere = models.CharField(max_length=100)
-    ora_petrecere = models.TimeField()
+    ora_petrecere = models.CharField(max_length=100)
 
     def __str__(self):
         return f'{self.nume_mireasă} -> {self.nume_mire}'

@@ -6,24 +6,22 @@
     <link rel="stylesheet" href="{% static 'invitation_form.css' %}" type="text/css" >
 </head>
 
-  <div class="container">
-        <div class="row justify-content-center align-items-center" style="height: 100vh;">
-                <div class="card">
-                    <div class="card-body">
-                        <form method="post">
-                            {% csrf_token %}
-                            {% for field in form %}
-                                <div class="form-group">
-                                    <p class="field-name">{{ field.label }}:</p>
-                                    {{ field }}
-                                    <span class="text-danger small">{{ field.errors }}</span>
-                                </div>
-                            {% endfor %}
-                            <button type="submit" class="btn-forward">Înainte</button>
-                            <button class="btn-forward" onclick="window.history.back()">Înapoi</button>
-                        </form>
+<body>
+  <div class="container-form">
+        <div class="card-form">
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group-container">
+                        <p class="field-name">{{ field.label }}:</p>
+                        {{ field }}
+                        <span class="text-danger small">{{ field.errors }}</span>
                     </div>
-                </div>
+                {% endfor %}
+                <button type="submit" class="btn-forward">Înainte</button>
+                <a class="btn-forward" href="{% url 'home' %}">Înapoi</a>
+            </form>
         </div>
     </div>
+</body>
 {% endblock %}
