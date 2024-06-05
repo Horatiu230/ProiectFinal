@@ -37,7 +37,8 @@
         {% endfor %}
         <div class="position-absolute top-100 start-50 translate-middle">
 <!--            -->
-            <a class="btn btn-primary" href="{% url 'guests:update_invite' item.id %}">Modificare</a>
+            <a class="btn btn-primary" href="{% if item.id %}{% url 'guests:update_invite' item.id %}{% endif %}">Modificare</a>
+
 <!--            <button type="submit" class="btn btn-sm btn-success">Save</button>-->
         </div>
     </div>

@@ -22,7 +22,27 @@ class CreateGuestsView(LoginRequiredMixin, CreateView):
         return reverse('guests:guest_list')
 
 
+class UpdateGuestsView(LoginRequiredMixin, UpdateView):
+    model = ConfirmationOfPresence
+    fields = ['prenume', 'nume', 'email', 'număr_telefon',
+              'număr_adulți', 'număr_copii']
+    template_name = 'app1/guests_form.html'
+
+    def get_success_url(self):
+        return reverse('guests:guest_list')
+
+
 class CreatePersonalizedInvitationView(LoginRequiredMixin, CreateView):
+    model = PersonalizedInvitation
+    fields = ['nume_mireasă', 'nume_mire', 'dată_eveniment', 'părinții_miresei', 'părinții_mirelui',
+              'nume_nașă', 'nume_naș', 'nume_biserică', 'ora_cununie_religioasă', 'local_petrecere', 'ora_petrecere']
+    template_name = 'app1/invitation_form.html'
+
+    def get_success_url(self):
+        return reverse('guests:modified_invitation')
+
+
+class UpdateInviteView(LoginRequiredMixin, UpdateView):
     model = PersonalizedInvitation
     fields = ['nume_mireasă', 'nume_mire', 'dată_eveniment', 'părinții_miresei', 'părinții_mirelui',
               'nume_nașă', 'nume_naș', 'nume_biserică', 'ora_cununie_religioasă', 'local_petrecere', 'ora_petrecere']
@@ -40,26 +60,6 @@ class CreatedModifiedInvitationView(LoginRequiredMixin, ListView):
 
     def get_success_url(self):
         return reverse('guests:modified_invitation')
-
-
-class UpdateInviteView(LoginRequiredMixin, UpdateView):
-    model = PersonalizedInvitation
-    fields = ['nume_mireasă', 'nume_mire', 'dată_eveniment', 'părinții_miresei', 'părinții_mirelui',
-              'nume_nașă', 'nume_naș', 'nume_biserică', 'ora_cununie_religioasă', 'local_petrecere', 'ora_petrecere']
-    template_name = 'app1/invitation_form.html'
-
-    def get_success_url(self):
-        return reverse('guests:personalized_invitation')
-
-
-class UpdateGuestsView(LoginRequiredMixin, UpdateView):
-    model = ConfirmationOfPresence
-    fields = ['first_name', 'last_name', 'email', 'phone_number',
-              'adults_number', 'kids_number', 'region']
-    template_name = 'app1/guests_form.html'
-
-    def get_success_url(self):
-        return reverse('guests:guest_list')
 
 
 @login_required

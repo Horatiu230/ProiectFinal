@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'invitation_form.css' %}" type="text/css" >
+</head>
+
+<body>
+  <div class="container-form">
+        <div class="card-form">
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group-container">
+                        <p class="field-name">{{ field.label }}:</p>
+                        {{ field }}
+                        <span class="text-danger small">{{ field.errors }}</span>
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn-forward">Salvează</button>
+                <a class="btn-forward" href="{% url 'home' %}">Înapoi</a>
+            </form>
+        </div>
+    </div>
+</body>
+{% endblock %}

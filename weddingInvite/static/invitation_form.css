@@ -32,7 +32,8 @@ form {
     margin: 10px 0px 0px 0px;
 }
 
-input[type=text] {
+input[type='text'],
+input[type='email'] {
     border-radius: 5px;
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);

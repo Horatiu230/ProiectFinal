@@ -88,18 +88,24 @@ Login:
 
 
 
+Intrebari:
 1. De ce preia stiluri din pagina base, chiar daca am create stiluri separate numai pentru pagina de home, de exemplu?
-2. Cum cobor div-card-ul de la form invitatie mai jos? pare sa nu il pot cobori
-
+2. Leg html cu form-ul si creez link nou spre pagina modificata - facut - intreb daca e ok
+3. De ce camp email nu este luiat la dimensiune corecta?
 
 
 
 DE FACUT:
-- incerc sa leg html cu form-ul si creez link nou spre pagina modificata
 - adaug module shchimbare parola cu modificarile de pagini html si css aferente
--
+- aranjez stilurile din base, a.i. sa arate uniform pe toate paginile.
+- pun buton de inregistrare pe pagina principala si buton admin pe celelalte pagini cu conditia ca el sa fie vazut doar
+  de superuser, adica de mine;
+- atentie la rotunjire butoane, poate fac la 50%, pt a avea un aer mai modern;
 
 
+
+
+Cont nou: hdc23
 
 
 
