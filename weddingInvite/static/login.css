@@ -2,6 +2,14 @@ form {
     font-family: "Roboto", sans-serif;
 }
 
+body, html  {
+    background-image: url('background.jpg');
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+}
+
 .card-login {
     background-image: url('background.jpg');
     padding: 50px;
@@ -18,7 +26,6 @@ form {
     justify-content: center;
     align-items: center;
     height: 100vh;
-/*    font-weight: 450;*/
     font-size: 14px;
 }
 
@@ -65,3 +72,12 @@ form {
     margin-top: 10px;
 }
 
+#id_email {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    width: calc(100%);
+    padding: 5px 8px;
+    margin-top: 5px;
+}

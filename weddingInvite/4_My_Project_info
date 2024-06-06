@@ -92,7 +92,9 @@ Intrebari:
 1. De ce preia stiluri din pagina base, chiar daca am create stiluri separate numai pentru pagina de home, de exemplu?
 2. Leg html cu form-ul si creez link nou spre pagina modificata - facut - intreb daca e ok
 3. De ce camp email nu este luiat la dimensiune corecta?
-
+4. Cand salvez utilizator nou, am dat sa ma duca spre home, dar dat fiind ca nu e logat(cred), nu ma duce
+5. Cand creez utilizator nou, cum schimb in formular sa am engleza, daca deja am tabel auth_user cu coloane engleza
+6. Atentie stil resetare parola, diferit fata de celalalt...de ce, ma bate....
 
 
 DE FACUT:
@@ -101,11 +103,17 @@ DE FACUT:
 - pun buton de inregistrare pe pagina principala si buton admin pe celelalte pagini cu conditia ca el sa fie vazut doar
   de superuser, adica de mine;
 - atentie la rotunjire butoane, poate fac la 50%, pt a avea un aer mai modern;
+- in masura in care apuc, sa fac si eu metoda de clean(pt erori personalizate),
+  middleware, in asa fel incat sa fie mai vizibil ce se intampla in aplica
 
 
 
 
-Cont nou: hdc23
+Utilizator nou proba:
+Marcel
+Haiduc
+marcel_haiduc@gmail.com
+marcel9
 
 
 

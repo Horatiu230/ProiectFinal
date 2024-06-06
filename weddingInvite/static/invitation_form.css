@@ -5,13 +5,18 @@ form {
     padding: 0;
 }
 
+html, .body-form {
+    background-image: url('background.jpg');
+    height: 100%;
+    margin: 0;
+}
+
 .container-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url('background.jpg');
-    background: cover;
     padding: 50px;
     min-width: 350px;
     max-width: 550px;
