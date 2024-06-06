@@ -5,11 +5,12 @@ form {
     padding: 0;
 }
 
-html, .body-form {
-    background-image: url('background.jpg');
-    height: 100%;
-    margin: 0;
-}
+/*html, .body-form {*/
+/*    background-image: url('background.jpg');*/
+/*    height: 100%;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
 
 .container-form {
     display: flex;
@@ -26,6 +27,7 @@ html, .body-form {
     border-radius: 10px;
     border: none;
     font-size: 14px
+    margin: 0;
 }
 
 

@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66ee9107-1d04-4390-8f3e-241daace2cea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/registration/invite_user.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_done.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_complete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_confirm.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/4_My_Project_info" beforeDir="false" afterPath="$PROJECT_DIR$/4_My_Project_info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/invitation.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/invitation_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/invitation_form.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app1/new_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/new_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app1/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app1/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weddingInvite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/weddingInvite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/new_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/new_user.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
