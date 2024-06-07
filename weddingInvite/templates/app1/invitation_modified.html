@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
+{% block invisible_all_other_pages %}
+{% endblock %}
 {% load static %}
 {% block title %}
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'invitation.css' %}" type="text/css" >
+    <link rel="stylesheet" href="{% static 'home.css' %}" type="text/css" >
+    <style>
+        h1, h2, p {
+            font-family: 'Great Vibes', cursive;;
+            color: black;
+            }
+    </style>
 </head>
 
 <body>
@@ -35,11 +43,10 @@
                 </div>
             </div>
         {% endfor %}
-        <div class="position-absolute top-100 start-50 translate-middle">
-<!--            -->
-            <a class="btn btn-primary" href="{% if item.id %}{% url 'guests:update_invite' item.id %}{% endif %}">Modificare</a>
+        <div id="modify-invitation-button" class="position-absolute bottom-0 start-50 translate-middle-x">
+            <a class="btn btn-outline-dark" href="{% if item.id %}{% url 'guests:update_invite' item.id %}{% endif %}">Editare</a>
+            <a class="btn btn-outline-dark" href="{% url 'guests:final_invitation' %}">Finalizează</a>
 
-<!--            <button type="submit" class="btn btn-sm btn-success">Save</button>-->
         </div>
     </div>
 </body>

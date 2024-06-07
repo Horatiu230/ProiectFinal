@@ -48,8 +48,8 @@ class UpdateInviteView(LoginRequiredMixin, UpdateView):
               'nume_nașă', 'nume_naș', 'nume_biserică', 'ora_cununie_religioasă', 'local_petrecere', 'ora_petrecere']
     template_name = 'app1/invitation_form.html'
 
-    def get_success_url(self):
-        return reverse('guests:modified_invitation')
+    # def get_success_url(self):
+    #     return reverse('guests:modified_invitation')
 
 
 class CreatedModifiedInvitationView(LoginRequiredMixin, ListView):
@@ -58,9 +58,18 @@ class CreatedModifiedInvitationView(LoginRequiredMixin, ListView):
               'nume_nașă', 'nume_naș', 'nume_biserică', 'ora_cununie_religioasă', 'local_petrecere', 'ora_petrecere']
     template_name = 'app1/invitation_modified.html'
 
-    def get_success_url(self):
-        return reverse('guests:modified_invitation')
+    # def get_success_url(self):
+    #     return reverse('guests:modified_invitation')
 
+
+class FinalInvitationView(LoginRequiredMixin, ListView):
+    model = PersonalizedInvitation
+    fields = ['nume_mireasă', 'nume_mire', 'dată_eveniment', 'părinții_miresei', 'părinții_mirelui',
+              'nume_nașă', 'nume_naș', 'nume_biserică', 'ora_cununie_religioasă', 'local_petrecere', 'ora_petrecere']
+    template_name = 'app1/invitation_final.html'
+
+    # def get_success_url(self):
+    #     return reverse('guests:final_invitation')
 
 @login_required
 def delete_location(request, pk):
@@ -76,6 +85,10 @@ def activate_location(request, pk):
 
 class HomePage(LoginRequiredMixin, TemplateView):
     template_name = 'app1/home.html'
+
+
+def confirmation_message(request):
+    return render(request, 'app1/confirmation_message.html')
 
 
 

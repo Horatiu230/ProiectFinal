@@ -91,10 +91,11 @@ Login:
 Intrebari:
 1. De ce preia stiluri din pagina base, chiar daca am create stiluri separate numai pentru pagina de home, de exemplu?
 2. Leg html cu form-ul si creez link nou spre pagina modificata - facut - intreb daca e ok
-3. De ce camp email nu este luiat la dimensiune corecta?
 4. Cand salvez utilizator nou, am dat sa ma duca spre home, dar dat fiind ca nu e logat(cred), nu ma duce
 5. Cand creez utilizator nou, cum schimb in formular sa am engleza, daca deja am tabel auth_user cu coloane engleza
 6. Atentie stil resetare parola, diferit fata de celalalt...de ce, ma bate....
+7. Buton update nu ma duce, nu ia pk dintr-un anume motiv
+8. Cum fac sa am un sg HMTL si sa asociez cu diferite imagini de fundal?
 
 
 DE FACUT:
@@ -106,8 +107,12 @@ DE FACUT:
 - in masura in care apuc, sa fac si eu metoda de clean(pt erori personalizate),
   middleware, in asa fel incat sa fie mai vizibil ce se intampla in aplica
 
-  Incerc sa bag stiluri direct in css, numai la elementul dorit, daca nu merge, atunci introduc styles in html
-  Pentru full screen, incerc cu margin 0, padding 0 la html si body
+- poate adaug shading la butoane navbar
+- atentie stiluri cont nou, daca dau click din aplicatie logat, atunci randeaza o pozitie, daca dau fara sa fiu logat,
+  atunci randeaza altfel, ma uit sa vad despre ce e vorba
+- modific ca atunci cand sterg un articol sa dispara din tabel
+- atentie la stiluri, nu am nevoie de alex brush peste tot, wtf?
+
 
 
 

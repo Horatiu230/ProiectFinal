@@ -1,11 +1,34 @@
 {% extends 'base.html' %}
-{% block title %}
-    <form method ="post">
-        {% csrf_token %}
-        {% for field in form %}
-            {{field.label}} {{field}}
-            <span class="text-danger small">{{field.errors}}</span>
-        {% endfor %}
-        <button type="submit" class="btn btn-sm btn-success">Save</button>
-    </form>
+{% load static %}
+{% block invisible_invitation_final %}
 {% endblock %}
+
+{% block title %}
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'invitation_form.css' %}" type="text/css" >
+</head>
+
+    <body>
+  <div class="container-form">
+        <div class="card-form">
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group-container">
+                        <p class="field-name">{{ field.label }}:</p>
+                        {{ field }}
+                        <span class="text-danger small">{{ field.errors }}</span>
+                    </div>
+                {% endfor %}
+                <a class="btn-forward" href="{% url 'guests:confirmation' %}">Înainte</a>
+                <a class="btn-forward" href="{% url 'guests:final_invitation' %}">Înapoi</a>
+            </form>
+        </div>
+    </div>
+</body>
+{% endblock %}
+
+
+
+

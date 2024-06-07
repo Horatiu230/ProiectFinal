@@ -1,45 +1,65 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block invisible_all_other_pages %}
+{% endblock %}
 {% block title %}
-    <div>
-        <a class="btn btn-sm btn-success" href="{% url 'guests:add' %}">Add</a>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Index</th>
-                        <th>Prenume</th>
-                        <th>Nume</th>
-                        <th>Email</th>
-                        <th>Număr telefon</th>
-                        <th>Număr adulți</th>
-                        <th>Număr copii</th>
-                        <th>Activ</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
 
-                <tbody>
-                    {% for item in confirmationofpresence_list %}
-                        <tr>
-                            <td>1</td>
-                            <td> {{ item.prenume }} </td>
-                            <td> {{ item.nume }} </td>
-                            <td> {{ item.email }}</td>
-                            <td> {{ item.număr_telefon }}</td>
-                            <td> {{ item.număr_adulți }}</td>
-                            <td> {{ item.număr_copii }}</td>
-                            <td> {{ item.active }}</td>
-                            <td>
-                                <a class="btn btn-sm btn-warning" href="{% url 'guests:update' item.id %}">Update</a>
-                                {% if item.active %}
-                                    <a class="btn btn-sm btn-danger" href="{% url 'guests:delete' item.id %}">Delete</a>
-                                {% else %}
-                                    <a class="btn btn-sm btn-info" href="{% url 'guests:activate' item.id %}">Activate</a>
-                                {% endif %}
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+<head>
+<!--    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&display=swap" rel="stylesheet">-->
+    <link rel="stylesheet" href="{% static 'guests.css' %}" type="text/css" >
+    <style>
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+                }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Prenume</th>
+                    <th>Nume</th>
+                    <th>Email</th>
+                    <th>Număr telefon</th>
+                    <th>Număr adulți</th>
+                    <th>Număr copii</th>
+                    <th>Activ</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for item in confirmationofpresence_list %}
+                    <tr>
+                        <td> {{ forloop.counter }} </td>
+                        <td> {{ item.prenume }} </td>
+                        <td> {{ item.nume }} </td>
+                        <td> {{ item.email }}</td>
+                        <td> {{ item.număr_telefon }}</td>
+                        <td> {{ item.număr_adulți }}</td>
+                        <td> {{ item.număr_copii }}</td>
+                        <td> {{ item.active }}</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" href="{% url 'guests:update' item.id %}">Update</a>
+                            {% if item.active %}
+                                <a class="btn btn-sm btn-danger" href="{% url 'guests:delete' item.id %}">Delete</a>
+                            {% else %}
+                                <a class="btn btn-sm btn-info" href="{% url 'guests:activate' item.id %}">Activate</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 {% endblock %}
 

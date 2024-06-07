@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block invisible_all_other_pages %}
+{% endblock %}
+{% block invisible_invitation_final %}
+{% endblock %}
+{% load static %}
+{% block title %}
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'invitation_form.css' %}" type="text/css" >
+</head>
+
+<body>
+    <div class="container-general">
+      <div class="container-form">
+            <div class="card-form">
+                <div class="form-group-container">
+                    <strong><h6>Îți mulțumim pentru confirmare!</h6></strong>
+                    <strong><h6>Te așteptăm pe ringul de dans!</h6></strong>
+                    <strong><h3>🕺</h3></strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
+
