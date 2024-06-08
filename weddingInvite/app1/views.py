@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.generic import ListView, CreateView, UpdateView, TemplateView
@@ -20,6 +21,16 @@ class CreateGuestsView(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse('guests:guest_list')
+
+
+class CreateConfirmationView(LoginRequiredMixin, CreateView):
+    model = ConfirmationOfPresence
+    fields = ['prenume', 'nume', 'email', 'număr_telefon',
+              'număr_adulți', 'număr_copii']
+    template_name = 'app1/confirmation_form.html'
+
+    def get_success_url(self):
+        return reverse('guests:confirmation')
 
 
 class UpdateGuestsView(LoginRequiredMixin, UpdateView):
@@ -70,6 +81,7 @@ class FinalInvitationView(LoginRequiredMixin, ListView):
 
     # def get_success_url(self):
     #     return reverse('guests:final_invitation')
+
 
 @login_required
 def delete_location(request, pk):

@@ -19,10 +19,18 @@
                     <strong><h6>Îți mulțumim pentru confirmare!</h6></strong>
                     <strong><h6>Te așteptăm pe ringul de dans!</h6></strong>
                     <strong><h3>🕺</h3></strong>
+                    <p>Vei fi redirecționat în 5 secunde către Home!</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "{% url 'guests:final_invitation' %}";
+        }, 5000);
+    </script>
+
 </body>
 {% endblock %}
 

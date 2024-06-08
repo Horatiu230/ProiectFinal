@@ -11,6 +11,7 @@ urlpatterns = [
     path('<int:pk>/updateinvite/', views.UpdateInviteView.as_view(), name='update_invite'),
     path('finalinvite/', views.FinalInvitationView.as_view(), name='final_invitation'),
     path('add/', views.CreateGuestsView.as_view(), name='add'),
+    path('confirmation/', views.CreateConfirmationView.as_view(), name='confirmation_form'),
     path('<int:pk>/update/', views.UpdateGuestsView.as_view(), name='update'),
     path('<int:pk>/delete/', views.delete_location, name='delete'),
     path('<int:pk>/activate/', views.activate_location, name='activate'),

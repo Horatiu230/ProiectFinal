@@ -38,18 +38,18 @@
             <nav>
                 <div class="d-flex justify-content-start">
                     {% if request.user.is_superuser %}
-                        <a class="btn btn-outline-light" href="{% url 'guests:guest_list' %}">Guests</a>
+                        <a class="btn btn-outline-light" href="{% url 'guests:guest_list' %}">Invitați</a>
                         <a class="btn btn-outline-light" href="/admin">Admin</a>
                     {% endif %}
 
                     <form action="{% url 'logout' %}" method="post">
                         {% csrf_token %}
-                        <button class="btn btn-outline-light" type="submit">Logout</button>
+                        <button class="btn btn-outline-light" type="submit">Deconectare</button>
                     </form>
                     <a class="btn btn-outline-light" href="{% url 'userprofile:new_user' %}">Cont nou</a>
 
                     {% if request.path != 'home' %}
-                        <a class="btn btn-outline-light" href="{% url 'home' %}">Home</a>
+                        <a class="btn btn-outline-light" href="{% url 'home' %}">Acasă</a>
                     {% endif %}
                 </div>
             </nav>
@@ -59,8 +59,8 @@
 
 {% block invisible_all_other_pages %}
     <div class="d-flex justify-content-start">
-        <a class="btn btn-outline-light" href="{% url 'guests:add' %}">Confirmă aici</a>
-        <a class="btn btn-outline-light" href="{% url 'guests:guest_list' %}">Infirmă aici</a>
+        <a class="btn btn-outline-light" href="{% url 'guests:confirmation_form' %}">Particip</a>
+        <a class="btn btn-outline-light" href="{% url 'guests:confirmation_form' %}">Nu particip</a>
         <a class="btn btn-outline-light">Locație Biserică</a>
         <a class="btn btn-outline-light">Locație Restaurant</a>
     </div>

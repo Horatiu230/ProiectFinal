@@ -110,8 +110,16 @@ DE FACUT:
 - poate adaug shading la butoane navbar
 - atentie stiluri cont nou, daca dau click din aplicatie logat, atunci randeaza o pozitie, daca dau fara sa fiu logat,
   atunci randeaza altfel, ma uit sa vad despre ce e vorba
-- modific ca atunci cand sterg un articol sa dispara din tabel
+- modific ca atunci cand sterg un articol sa dispara din tabel - facut
 - atentie la stiluri, nu am nevoie de alex brush peste tot, wtf?
+- atentie cand editez un camp in tabel guests, dupa ce editez, sa fac o alta pagina in care sa se salveze si care sa ruteze inapoi la tabel
+  momentan ma duce unde nu trebuie
+- atentie dupa ce sterg din tabel chestii la index-ul randului sters, cand se readauga chestii sa ma indexul bun (ceva conditie cu index length)
+- atentie sa nu pot salva de doua ori aceleasi ca invitat
+
+
+ATENTIE!!!
+Folosesc un singur tabel in care am un camp cu bifa : particip/nu particip, care se va salva in tabelul din baza de date;
 
 
 
