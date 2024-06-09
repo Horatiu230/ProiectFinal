@@ -5,17 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66ee9107-1d04-4390-8f3e-241daace2cea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/app1/confirmation_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app1/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app1/migrations/0002_confirmationofpresence_confirmare_prezență.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/app1/infirmation_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/4_My_Project_info" beforeDir="false" afterPath="$PROJECT_DIR$/4_My_Project_info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app1/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app1/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app1/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/guests.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/guests.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app1/confirmation_message.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app1/confirmation_message.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app1/guests_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app1/guests_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/app1/guests_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app1/guests_index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="CSS File" />
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>

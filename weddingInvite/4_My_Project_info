@@ -116,10 +116,20 @@ DE FACUT:
   momentan ma duce unde nu trebuie
 - atentie dupa ce sterg din tabel chestii la index-ul randului sters, cand se readauga chestii sa ma indexul bun (ceva conditie cu index length)
 - atentie sa nu pot salva de doua ori aceleasi ca invitat
+- cand editez ceva in tabel invitati, cand dau inapoi ma duce pe parte de invitatie finala invitat,
+  nu ma duce tocmai bine, pt ca e acelasi form folosit
 
+- IDEE: incerc sa folosesc un singur form si pt confirmare si pt infirmare, a.i. in momentul in care am anumite field-uri necompletate,
+  adica la infirmare, sa ma duca pe infirmare(conditionez butoane, cumva...)
+
+  si de asemenea cand a campuri goale sa nu pot sa dau clik pe ele...fac cumva si asta...
 
 ATENTIE!!!
 Folosesc un singur tabel in care am un camp cu bifa : particip/nu particip, care se va salva in tabelul din baza de date;
+Am nevoie de un nou form care sa foloseasca numai campurile de care am nevoie, adica:
+nume
+prenume
+bifa cu da sau nu
 
 
 

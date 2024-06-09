@@ -40,7 +40,8 @@
                     <th>Număr telefon</th>
                     <th>Număr adulți</th>
                     <th>Număr copii</th>
-<!--                    <th>Activ</th>-->
+<!--                    <th>Vin(DA/NU)</th>-->
+                    <th>Vin(DA/NU)</th>
                     <th class="final-column">Acțiuni</th>
                 </tr>
             </thead>
@@ -56,7 +57,8 @@
                                 <td> {{ item.număr_telefon }}</td>
                                 <td> {{ item.număr_adulți }}</td>
                                 <td> {{ item.număr_copii }}</td>
-    <!--                            <td> {{ item.active }}</td>-->
+                                <td> {{ item.confirmare_prezență }}</td>
+<!--                                <td> {{ item.active }}</td>-->
                                 <td class="final-column">
                                     <a class="btn btn-sm btn-warning" href="{% url 'guests:update' item.id %}">Editează</a>
                                     <a class="btn btn-sm btn-danger" href="{% url 'guests:delete' item.id %}">Șterge</a>

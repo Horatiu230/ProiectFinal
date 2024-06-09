@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.generic import ListView, CreateView, UpdateView, TemplateView
+
+from app1.forms import InfirmationForm
 from app1.models import ConfirmationOfPresence
 from app1.models import PersonalizedInvitation
 
@@ -16,7 +18,7 @@ class GuestsView(LoginRequiredMixin, ListView):
 class CreateGuestsView(LoginRequiredMixin, CreateView):
     model = ConfirmationOfPresence
     fields = ['prenume', 'nume', 'email', 'număr_telefon',
-              'număr_adulți', 'număr_copii']
+              'număr_adulți', 'număr_copii', 'confirmare_prezență']
     template_name = 'app1/guests_form.html'
 
     def get_success_url(self):
@@ -26,7 +28,7 @@ class CreateGuestsView(LoginRequiredMixin, CreateView):
 class CreateConfirmationView(LoginRequiredMixin, CreateView):
     model = ConfirmationOfPresence
     fields = ['prenume', 'nume', 'email', 'număr_telefon',
-              'număr_adulți', 'număr_copii']
+              'număr_adulți', 'număr_copii', 'confirmare_prezență']
     template_name = 'app1/confirmation_form.html'
 
     def get_success_url(self):
@@ -36,7 +38,7 @@ class CreateConfirmationView(LoginRequiredMixin, CreateView):
 class UpdateGuestsView(LoginRequiredMixin, UpdateView):
     model = ConfirmationOfPresence
     fields = ['prenume', 'nume', 'email', 'număr_telefon',
-              'număr_adulți', 'număr_copii']
+              'număr_adulți', 'număr_copii', 'confirmare_prezență']
     template_name = 'app1/guests_form.html'
 
     def get_success_url(self):
@@ -103,7 +105,12 @@ def confirmation_message(request):
     return render(request, 'app1/confirmation_message.html')
 
 
+class Infirmation(LoginRequiredMixin, CreateView):
+    template_name = 'app1/infirmation_form.html'
+    form_class = InfirmationForm
 
+    def get_success_url(self):
+        return reverse('guests:confirmation')
 
 
 

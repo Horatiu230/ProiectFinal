@@ -10,6 +10,11 @@ class ConfirmationOfPresence(models.Model):
     număr_telefon = models.CharField(max_length=30)
     număr_adulți = models.IntegerField()
     număr_copii = models.IntegerField()
+    confirmare_prezență = models.CharField(
+        max_length=3,
+        choices=[("DA", "DA"), ("NU", "NU")],
+        default="DA"
+        )
     active = models.BooleanField(default=True)
 
     def __str__(self):
