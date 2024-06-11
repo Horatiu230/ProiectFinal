@@ -9,19 +9,12 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
             html, body {
-                position: fixed;
+/*                position: fixed;*/
                 top: 0;
                 left: 0;
                 bottom: 0;
                 right: 0;
             }
-
-/*            nav {*/
-/*                position: fixed;*/
-/*                top: 0;*/
-/*                left: 0;*/
-/*                padding: 10px;*/
-/*            }*/
 
             .btn {
                 margin-left: 15px;
@@ -41,16 +34,16 @@
                         <a class="btn btn-outline-light" href="{% url 'guests:guest_list' %}">Invitați</a>
                         <a class="btn btn-outline-light" href="/admin">Admin</a>
                     {% endif %}
-
                     <form action="{% url 'logout' %}" method="post">
                         {% csrf_token %}
                         <button class="btn btn-outline-light" type="submit">Deconectare</button>
                     </form>
                     <a class="btn btn-outline-light" href="{% url 'userprofile:new_user' %}">Cont nou</a>
-
                     {% if request.path != 'home' %}
                         <a class="btn btn-outline-light" href="{% url 'home' %}">Acasă</a>
                     {% endif %}
+                    <a class="btn btn-outline-light" href="{% url 'guests:userrestaurantlocation' %}">Adresă local/Biserică</a>
+<!--                    <a class="btn btn-outline-light" href="">Exportă</a>-->
                 </div>
             </nav>
         {% endif %}
@@ -59,14 +52,16 @@
 
 {% block invisible_all_other_pages %}
     <div class="d-flex justify-content-start">
+        {% if request.user.is_superuser %}
+            <a class="btn btn-outline-light" href="{% url 'home' %}">Acasă</a>
+        {% endif %}
         <a class="btn btn-outline-light" href="{% url 'guests:confirmation_form' %}">Particip</a>
         <a class="btn btn-outline-light" href="{% url 'guests:infirmation_form' %}">Nu particip</a>
-        <a class="btn btn-outline-light">Locație Biserică</a>
-        <a class="btn btn-outline-light">Locație Restaurant</a>
+        <a class="btn btn-outline-light" href="{% url 'guests:clientrestaurantlocation' %}">Locație Biserică</a>
+        <a class="btn btn-outline-light" href="{% url 'guests:clientrestaurantlocation' %}">Locație Restaurant</a>
+
     </div>
 {% endblock %}
-
-
 
 {% block title %} {% endblock %}
 </html>

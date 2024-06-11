@@ -1,6 +1,7 @@
+
 {% extends 'base.html' %}
 {% load static %}
-{% block invisible_invitation_final %}
+{% block invisible_all_other_pages %}
 {% endblock %}
 
 {% block title %}
@@ -21,20 +22,35 @@
                         <span class="text-danger small">{{ field.errors }}</span>
                     </div>
                 {% endfor %}
-
-                {% if 'guests' in request.path and 'update' in request.path %}
-                    <a class="btn-forward" href="{% url 'guests:guest_list' %}">Înapoi</a>
-                    <a class="btn-forward" href="{% url 'guests:guest_list' %}">Salvează</a>
-
-                {% elif request.path == 'guests/confirmation' or request.path == 'guests/infirmation' %}
-                    <a class="btn-forward" href="{% url 'guests:final_invitation' %}">Înapoi</a>
-                    <button class="btn-forward">Salvează raspunsul</button>
-                {% endif %}
+                    <button class="btn-forward" >Salvează raspunsul</button>
+                    <a class="btn-forward" href="{% url ' %}">Salvează raspunsul</a>
             </form>
         </div>
     </div>
 </body>
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

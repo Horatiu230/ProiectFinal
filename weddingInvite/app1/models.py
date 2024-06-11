@@ -8,8 +8,8 @@ class ConfirmationOfPresence(models.Model):
     nume = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     număr_telefon = models.CharField(max_length=30)
-    număr_adulți = models.IntegerField()
-    număr_copii = models.IntegerField()
+    număr_adulți = models.IntegerField(null=True)
+    număr_copii = models.IntegerField(null=True)
     confirmare_prezență = models.CharField(
         max_length=3,
         choices=[("DA", "DA"), ("NU", "NU")],
@@ -36,4 +36,12 @@ class PersonalizedInvitation(models.Model):
 
     def __str__(self):
         return f'{self.nume_mireasă} -> {self.nume_mire}'
+
+
+class Address(models.Model):
+    adresă_local = models.CharField(max_length=100)
+    adresă_biserică = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'{self.addresă_local} si {self.addresă_biserică}'
 

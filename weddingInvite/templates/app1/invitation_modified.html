@@ -17,6 +17,7 @@
 <body>
     <div class="invitation-container">
         {% for item in personalizedinvitation_list %}
+            {{ forloop.counter }}
             <div class="invitation">
                 <h1>Cu inimile pline de emoție și bucurie, noi</h1>
                 <h2> {{ item.nume_mireasă }} & {{ item.nume_mire }} </h2>
@@ -42,12 +43,32 @@
                     <p>Vă așteptăm cu drag!</p>
                 </div>
             </div>
-        {% endfor %}
+
         <div id="modify-invitation-button" class="position-absolute bottom-0 start-50 translate-middle-x">
-            <a class="btn btn-outline-dark" href="{% if item.id %}{% url 'guests:update_invite' item.id %}{% endif %}">Editare</a>
+            <a class="btn btn-outline-dark" href="{% url 'guests:update_invite' item.id %}">Editare</a>
             <a class="btn btn-outline-dark" href="{% url 'guests:final_invitation' %}">Finalizează</a>
 
         </div>
+        {% endfor %}
     </div>
 </body>
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

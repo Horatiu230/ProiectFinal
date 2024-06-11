@@ -52,20 +52,9 @@ PROBLEMS THAT OCCURRED:
   2 - Solution: instead, open directly the folder that django created when creating the new project, in my case: weddingInvite
 
 
-* Load image as a background image, possible that I need this code: <!-- <link rel="stylesheet" href="{% static 'custom.css'%}" type="text/css" >-->
-<!--{% load static %}-->
 
 
 
-
-
-Intrebari:
-Tabel, ce tip de data sa pun in el?
-1. dupa Login, sa merg pe o pagina principala de home (e ok cum am facut- sau alt fel??)
-2. Cum pot face legarea informatiilor din html invitatie cu form, a.i. sa se modifice?
-3. Admin si logout o sa le las pe toate paginile, cele ce tin de mine, pt invitat, nu o sa se vada
-4. Ce tabele ar mai trebui sa fac in db? completare date pentru invitatie?
-5. La html, pot sa leg fiecare pagina de o pagina de css?
 
 In prima faza incerc sa desenez cardurile la invitatii cu 4 poze in spate. Cred.
 Caut sa vad cum pot sa modific tabel din comenzi, nu manual...
@@ -76,60 +65,56 @@ click pe poza, href=object.id, ca sa asociez cumva id cu invitatia mea
 Clasa DetailView , cand dau click ma duce pe pag html pe care vreau sa vad...hai ca o descos eu
 
 Atentie la tema fundal, ca sa arate bine, sa fie stilizata frumos
-Posibilitate de creare cont, pentru membrii noi (miri, gen)
-Deci eu sunt admin aplicatie, iar utilizatorii isi vor crea conturi, eu sunt superuser, iar ceilalti vor fi useri normali, cred
 
-Azi 30.05.2024:
-Login:
-- adaugare card-da
-- adaugare umbre-da
-- adaugare font-uri google-da
-- adaugare username, password, etc ca si text de fundal-da
+
+
 
 
 
 Intrebari:
-1. De ce preia stiluri din pagina base, chiar daca am create stiluri separate numai pentru pagina de home, de exemplu?
 2. Leg html cu form-ul si creez link nou spre pagina modificata - facut - intreb daca e ok
 4. Cand salvez utilizator nou, am dat sa ma duca spre home, dar dat fiind ca nu e logat(cred), nu ma duce
 5. Cand creez utilizator nou, cum schimb in formular sa am engleza, daca deja am tabel auth_user cu coloane engleza
 6. Atentie stil resetare parola, diferit fata de celalalt...de ce, ma bate....
 7. Buton update nu ma duce, nu ia pk dintr-un anume motiv
 8. Cum fac sa am un sg HMTL si sa asociez cu diferite imagini de fundal?
+9. E ok cum am lasat pentru infirmation form?
+
+
 
 
 DE FACUT:
-- adaug module shchimbare parola cu modificarile de pagini html si css aferente
-- aranjez stilurile din base, a.i. sa arate uniform pe toate paginile.
-- pun buton de inregistrare pe pagina principala si buton admin pe celelalte pagini cu conditia ca el sa fie vazut doar
-  de superuser, adica de mine;
-- atentie la rotunjire butoane, poate fac la 50%, pt a avea un aer mai modern;
+
 - in masura in care apuc, sa fac si eu metoda de clean(pt erori personalizate),
   middleware, in asa fel incat sa fie mai vizibil ce se intampla in aplica
 
 - poate adaug shading la butoane navbar
 - atentie stiluri cont nou, daca dau click din aplicatie logat, atunci randeaza o pozitie, daca dau fara sa fiu logat,
   atunci randeaza altfel, ma uit sa vad despre ce e vorba
-- modific ca atunci cand sterg un articol sa dispara din tabel - facut
 - atentie la stiluri, nu am nevoie de alex brush peste tot, wtf?
+
 - atentie cand editez un camp in tabel guests, dupa ce editez, sa fac o alta pagina in care sa se salveze si care sa ruteze inapoi la tabel
   momentan ma duce unde nu trebuie
-- atentie dupa ce sterg din tabel chestii la index-ul randului sters, cand se readauga chestii sa ma indexul bun (ceva conditie cu index length)
+
+- atentie dupa ce sterg din tabel chestii la index-ul randului sters, cand se readauga chestii sa am indexul bun (ceva conditie cu index length)
+
 - atentie sa nu pot salva de doua ori aceleasi ca invitat
+
 - cand editez ceva in tabel invitati, cand dau inapoi ma duce pe parte de invitatie finala invitat,
   nu ma duce tocmai bine, pt ca e acelasi form folosit
 
 - IDEE: incerc sa folosesc un singur form si pt confirmare si pt infirmare, a.i. in momentul in care am anumite field-uri necompletate,
   adica la infirmare, sa ma duca pe infirmare(conditionez butoane, cumva...)
 
-  si de asemenea cand a campuri goale sa nu pot sa dau clik pe ele...fac cumva si asta...
+- adaug API
+- Incerc sa adaug confirmare cu email(eu sa primesc un email ca persoana imi vine, sau si ea...tot aia e),
+  cumva sa vad in ceva html datele salvate...
+- si daca apuc, sa fac si export la invitatie
 
-ATENTIE!!!
-Folosesc un singur tabel in care am un camp cu bifa : particip/nu particip, care se va salva in tabelul din baza de date;
-Am nevoie de un nou form care sa foloseasca numai campurile de care am nevoie, adica:
-nume
-prenume
-bifa cu da sau nu
+- Detail view - vad daca pot sa folosesc la aducere date in loc de list, a.i.sa imi aduca doar ultima instanta
+- Sa dau conditie la user sa fie logat cand vrea sa dea pe customizeaza
+
+
 
 
 
@@ -141,7 +126,7 @@ Haiduc
 marcel_haiduc@gmail.com
 marcel9
 
-
+API KEY: AIzaSyCXwXEEhV8aVrEpdk80x7ndl1p6AE3NHQ4
 
 
 

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'invitation_form.css' %}" type="text/css" >
 </head>
 
-    <body>
+<body>
   <div class="container-form">
         <div class="card-form">
             <form method="post">
@@ -21,8 +21,8 @@
                         <span class="text-danger small">{{ field.errors }}</span>
                     </div>
                 {% endfor %}
-                <a class="btn-forward" href="{% url 'guests:final_invitation' %}">Înapoi</a>
                 <button class="btn-forward">Salvează raspunsul</button>
+                <a class="btn-forward" href="{% url 'guests:final_invitation' %}">Înapoi</a>
             </form>
         </div>
     </div>
