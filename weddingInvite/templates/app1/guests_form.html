@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block invisible_invitation_final %}
 {% endblock %}
+
+{% block invisible_all_other_pages %}
+{% endblock %}
+
+
+
 
 {% block title %}
 <head>
@@ -24,7 +31,8 @@
 
                 {% if 'guests' in request.path and 'update' in request.path %}
                     <a class="btn-forward" href="{% url 'guests:guest_list' %}">Înapoi</a>
-                    <a class="btn-forward" href="{% url 'guests:guest_list' %}">Salvează</a>
+<!--                    <a class="btn-forward" href="{% url 'guests:guest_list' %}">Salvează</a>-->
+                        <button class="btn-forward">Salvează raspunsul</button>
 
                 {% elif request.path == 'guests/confirmation' or request.path == 'guests/infirmation' %}
                     <a class="btn-forward" href="{% url 'guests:final_invitation' %}">Înapoi</a>

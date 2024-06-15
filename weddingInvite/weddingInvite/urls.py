@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.auth.views import LoginView
-from django.urls import path, include
+from django.shortcuts import redirect
+from django.urls import path, include, re_path
+from django.views.generic import RedirectView
+
 from app1 import views
 
 
@@ -26,5 +29,6 @@ urlpatterns = [
     path('home/', views.HomePage.as_view(), name='home'),
     path('', include('django.contrib.auth.urls'), {'next_page': '/'}, name='login'),
     path('', LoginView.as_view(template_name='registration/login.html'), name='login'),
-    path('userprofile/', include('userprofile.urls'))
+    path('userprofile/', include('userprofile.urls')),
+    re_path(r'^$', RedirectView.as_view(url='home/', permanent=False), name='index')
 ]

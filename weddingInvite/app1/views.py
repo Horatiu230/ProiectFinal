@@ -10,14 +10,18 @@ from django.views.generic import ListView, CreateView, UpdateView, TemplateView
 from app1.forms import InfirmationForm
 from app1.models import ConfirmationOfPresence, Address
 from app1.models import PersonalizedInvitation
+import imgkit
+import pdfkit
+# import wkhtmltoimage
 
 
 class GuestsView(LoginRequiredMixin, ListView):
     model = ConfirmationOfPresence
     template_name = 'app1/guests_index.html'
 
+
     def get_queryset(self):
-        return ConfirmationOfPresence.objects.filter(active=True)
+        return ConfirmationOfPresence.objects.filter(utilizator=self.request.user, active=True)
 
 
 # Creare formular completare date invitati
@@ -26,6 +30,7 @@ class CreateGuestsView(LoginRequiredMixin, CreateView):
     fields = ['prenume', 'nume', 'email', 'număr_telefon',
               'număr_adulți', 'număr_copii', 'confirmare_prezență']
     template_name = 'app1/guests_form.html'
+
 
     def get_success_url(self):
         return reverse('guests:guest_list')
@@ -39,6 +44,7 @@ class UpdateGuestsView(LoginRequiredMixin, UpdateView):
               'număr_adulți', 'număr_copii', 'confirmare_prezență']
     template_name = 'app1/guests_form.html'
 
+
     def get_success_url(self):
         return reverse('guests:guest_list')
 
@@ -50,6 +56,10 @@ class CreatePersonalizedInvitationView(LoginRequiredMixin, CreateView):
     fields = ['nume_mireasă', 'nume_mire', 'dată_eveniment', 'părinții_miresei', 'părinții_mirelui',
               'nume_nașă', 'nume_naș', 'nume_biserică', 'ora_cununie_religioasă', 'local_petrecere', 'ora_petrecere']
     template_name = 'app1/invitation_form.html'
+
+    def form_valid(self, form):
+        form.instance.utilizator = self.request.user
+        return super().form_valid(form)
 
     def get_success_url(self):
         return reverse('guests:modified_invitation')
@@ -74,6 +84,8 @@ class ListModifiedInvitationView(LoginRequiredMixin, ListView):
               'nume_nașă', 'nume_naș', 'nume_biserică', 'ora_cununie_religioasă', 'local_petrecere', 'ora_petrecere']
     template_name = 'app1/invitation_modified.html'
 
+    def get_queryset(self):
+        return PersonalizedInvitation.objects.order_by('-id')[:1]
 
 # Listare invitatie modificata(parte invitat) - aici cred ca pot conditiona ce navbar sa imi apara in functie de link-ul de pe care merg acolo.
 class FinalInvitationView(LoginRequiredMixin, ListView):
@@ -82,6 +94,8 @@ class FinalInvitationView(LoginRequiredMixin, ListView):
               'nume_nașă', 'nume_naș', 'nume_biserică', 'ora_cununie_religioasă', 'local_petrecere', 'ora_petrecere']
     template_name = 'app1/invitation_final.html'
 
+    def get_queryset(self):
+        return PersonalizedInvitation.objects.order_by('-id')[:1]
 
 # Stergere date dabel invitati
 @login_required
@@ -98,7 +112,7 @@ def activate_location(request, pk):
 
 
 # Home Page
-class HomePage(LoginRequiredMixin, TemplateView):
+class HomePage(TemplateView):
     template_name = 'app1/home.html'
 
 
@@ -122,8 +136,9 @@ class CreateConfirmationView(LoginRequiredMixin, CreateView):
               'număr_adulți', 'număr_copii', 'confirmare_prezență']
     template_name = 'app1/confirmation_form.html'
 
-    # def get_success_url(self):
-    #     return reverse('guests:confirmation')
+    def form_valid(self, form):
+        form.instance.utilizator = self.request.user
+        return super().form_valid(form)
 
     def get_success_url(self):
         if ConfirmationOfPresence.objects.filter(id=self.object.id).exists():
@@ -132,8 +147,7 @@ class CreateConfirmationView(LoginRequiredMixin, CreateView):
             content = (f'Invitatul: {user_instance.prenume} {user_instance.nume} a confirmat prezența la eveniment. \n'
                        f'O să participe {user_instance.număr_adulți} adulți și {user_instance.număr_copii} copii!')
             msg_html = render_to_string('app1/email_received.html', {'content_email': content})
-            email = EmailMultiAlternatives(subject='Confirmare eveniment', body=content,
-                                           from_email=user_instance.email, to=['haiduc.hory@gmail.com'])
+            email = EmailMultiAlternatives(subject='Confirmare eveniment', from_email=user_instance.email, to=['haiduc.hory@gmail.com'])
             email.attach_alternative(msg_html, 'text/html')
             email.send()
         return reverse('guests:confirmation')
@@ -143,6 +157,10 @@ class CreateConfirmationView(LoginRequiredMixin, CreateView):
 class Infirmation(LoginRequiredMixin, CreateView):
     template_name = 'app1/infirmation_form.html'
     form_class = InfirmationForm
+
+    def form_valid(self, form):
+        form.instance.utilizator = self.request.user
+        return super().form_valid(form)
 
     def get_success_url(self):
         return reverse('guests:infirmation')
@@ -155,35 +173,51 @@ class MapsViewUser(LoginRequiredMixin, CreateView):
     template_name = 'app1/mapsuser.html'
 
     def get_success_url(self):
-        return reverse('guests:userrestaurantlocation')
+        return reverse('guests:modified_invitation')
 
 
-# class MapsViewClient(LoginRequiredMixin, ListView):
-#     model = Address
-#     template_name = 'app1/mapsclient.html'
-
-    # def get_success_url(self):
-    #     return reverse('guests:clientrestaurantlocation')
-
-    # def get_success_url(self):
-    #     last_address = Address.objects.filter(address='La Foret - Home of Events')
-    #     return last_address
-
-
-class MapsViewClient(LoginRequiredMixin, ListView):
+# API restaurant
+class MapsRestaurantViewClient(LoginRequiredMixin, ListView):
     model = Address
-    template_name = 'app1/mapsclient.html'
+    template_name = 'app1/restaurant_location_api.html'
+
+    def get_queryset(self):
+        return Address.objects.order_by('-id')[:1]
 
     def get_success_url(self):
         return reverse('guests:clientrestaurantlocation')
 
 
-# Aici ar mai fi trebuit un link pentru vizualizare locatie Biserica, dar nu am reusit nici cu cel de restaurant
+# API Biserica
+class MapsChurchViewClient(LoginRequiredMixin, ListView):
+    model = Address
+    template_name = 'app1/church_location_api.html'
 
+    def get_queryset(self):
+        return Address.objects.order_by('-id')[:1]
+
+    def get_success_url(self):
+        return reverse('guests:clientchurchlocation')
+
+
+
+
+
+
+
+# Aici ar mai fi trebuit un link pentru vizualizare locatie Biserica, dar nu am reusit nici cu cel de restaurant
 
 # @login_required
 # def email_message(request):
 #     return render(request, 'app1/email_received.html')
+
+
+# def export_template(request):
+#     context = {'key': 'value'}
+#     html_content = render_to_string('app1/invitation_final.html', context)
+#     # imgkit.from_string(html_content, 'output.png')
+#     pdfkit.from_string(html_content, 'output.pdf')
+#     return render(request, 'app1/invitation_final.html', context)
 
 
 

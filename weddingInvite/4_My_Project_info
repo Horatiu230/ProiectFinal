@@ -112,9 +112,23 @@ DE FACUT:
 - si daca apuc, sa fac si export la invitatie
 
 - Detail view - vad daca pot sa folosesc la aducere date in loc de list, a.i.sa imi aduca doar ultima instanta
-- Sa dau conditie la user sa fie logat cand vrea sa dea pe customizeaza
+- Sa dau conditie la user sa fie logat cand vrea sa dea pe customizeaze si sa pot sa vizualizez si nelogat
 
+- Incerc sa fac sa nu fie dubluri la confirmare si infirmare invitat
 
+- fac cumva sa nu pot sa sterg articoe, ca utilizator care nu e superuser (permisionrequiredmixin)
+
+- pot sa folosesc clasa Filter View
+
+- pot sa implementez ceva sandbox
+
+- inregistrare cookies ca sa mi se reincarce datele automat
+
+-  ca si buna practica nu facem logica in modele
+
+- pagina de eroare cand am o eroare, nu pagina normala de Django
+
+- Puteam avea formular in views normal care vin din model sau nu vin din baza de date, atunci le fac eu (form.Form)
 
 
 
@@ -129,6 +143,15 @@ marcel9
 API KEY: AIzaSyCXwXEEhV8aVrEpdk80x7ndl1p6AE3NHQ4
 
 
+De facut pana la prezentare:
+-- Fac utilizator sa poata sa vada invitatii, nu doar superuser, pentru ca nu are nicio logica
+-- Asociez utilizatorul care este logat, cu invitatii sai
+-- Atentie la actualizare articol, nu actualizeaza articolele cand am avut infirmare si incerc apoi sa adaug ca si confirmare
+-- Atentie la Navbar cand incerc sa dau actualizare, apare acela de la confirmare
+-- Cum fac sa pot sa editez in campuri la buton editare invitati, a.i. sa pot editez si cu campuri goale
+-- Atentie la primire email, apare de doua ori mesajul
+
+buton editare ma duce pe formular confirmare, dar vreau sa a duca defapt pe formular de
 
 
 

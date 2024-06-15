@@ -18,8 +18,10 @@ urlpatterns = [
     path('<int:pk>/activate/', views.activate_location, name='activate'),
     path('confirmationmessage/', views.confirmation_message, name='confirmation'),
     path('infirmationonmessage/', views.infirmation_message, name='infirmation'),
-    path('userrestaurantlocation/', views.MapsViewUser.as_view(), name='userrestaurantlocation'),
-    path('clientrestaurantlocation/', views.MapsViewClient.as_view(), name='clientrestaurantlocation'),
+    path('churchpartylocations/', views.MapsViewUser.as_view(), name='churchpartylocations'),
+    path('clientrestaurantlocation/', views.MapsRestaurantViewClient.as_view(), name='clientrestaurantlocation'),
+    path('clientchurchlocation/', views.MapsChurchViewClient.as_view(), name='clientchurchlocation'),
+    # path('exporttemplate', views.export_template, name='export')
     # path('emailmessage/', views.email_message, name='emailmessage')
 ]
 

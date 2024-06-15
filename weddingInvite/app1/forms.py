@@ -10,6 +10,21 @@ class InfirmationForm(forms.ModelForm):
         fields = ['prenume', 'nume', 'confirmare_prezență']
 
 
+
+
+
+
+
+        # def clean(self):
+        #     cleaned_data = super().clean()
+        #     prenume = cleaned_data.get('prenume')
+        #     nume = cleaned_data.get('nume')
+        #
+        #     if ConfirmationOfPresence.objects.filter(prenume=prenume, nume=nume).exists():
+        #         raise forms.ValidationError("Combinația de nume există deja.")
+        #     return cleaned_data
+
+
         # def clean_număr_telefon(self):
         #     val = self.cleaned_data.get('număr_telefon')
         #     if val is None:
