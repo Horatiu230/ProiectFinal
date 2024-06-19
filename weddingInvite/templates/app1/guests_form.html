@@ -31,7 +31,6 @@
 
                 {% if 'guests' in request.path and 'update' in request.path %}
                     <a class="btn-forward" href="{% url 'guests:guest_list' %}">Înapoi</a>
-<!--                    <a class="btn-forward" href="{% url 'guests:guest_list' %}">Salvează</a>-->
                         <button class="btn-forward">Salvează raspunsul</button>
 
                 {% elif request.path == 'guests/confirmation' or request.path == 'guests/infirmation' %}

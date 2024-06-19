@@ -30,5 +30,4 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls'), {'next_page': '/'}, name='login'),
     path('', LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('userprofile/', include('userprofile.urls')),
-    re_path(r'^$', RedirectView.as_view(url='home/', permanent=False), name='index')
 ]

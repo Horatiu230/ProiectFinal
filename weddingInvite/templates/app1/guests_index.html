@@ -56,11 +56,9 @@
                         <td> {{ item.număr_adulți }}</td>
                         <td> {{ item.număr_copii }}</td>
                         <td> {{ item.confirmare_prezență }}</td>
-<!--                                <td> {{ item.active }}</td>-->
                         <td class="final-column">
                             <a class="btn btn-sm btn-warning" href="{% url 'guests:update' item.id %}">Editează</a>
                             <a class="btn btn-sm btn-danger" href="{% url 'guests:delete' item.id %}">Șterge</a>
-<!--                            <a class="btn btn-sm btn-info" href="{% url 'guests:activate' item.id %}">Activate</a>-->
                         </td>
                     </tr>
                 {% endfor %}
@@ -75,6 +73,12 @@
 
 
 
+
+
+
+
+<!--                    <td> {{ item.active }}</td>-->
+<!--                        <a class="btn btn-sm btn-info" href="{% url 'guests:activate' item.id %}">Activate</a>-->
 
 
 
