@@ -10,9 +10,6 @@ from django.views.generic import ListView, CreateView, UpdateView, TemplateView
 from app1.forms import InfirmationForm
 from app1.models import ConfirmationOfPresence, Address
 from app1.models import PersonalizedInvitation
-import imgkit
-import pdfkit
-
 from weddingInvite.settings import API_KEY
 
 
@@ -188,6 +185,12 @@ class MapsRestaurantViewClient(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Address.objects.order_by('-id')[:1]
 
+    def my_view_restaurant(self, request):
+        context = {
+            'api_key': API_KEY,
+        }
+        return render(request, 'app1/restaurant_location_api.html', context)
+
     def get_success_url(self):
         return reverse('guests:clientrestaurantlocation')
 
@@ -200,15 +203,18 @@ class MapsChurchViewClient(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Address.objects.order_by('-id')[:1]
 
+    def my_view_church(self, request):
+        context = {
+            'api_key': API_KEY,
+        }
+        return render(request, 'app1/church_location_api.html', context)
+
     def get_success_url(self):
         return reverse('guests:clientchurchlocation')
 
 
-def my_view(request):
-    context = {
-        'api_key': API_KEY,
-    }
-    return render(request, 'app1/restaurant_location_api.html', context)
+
+
 
 
 

@@ -11,14 +11,13 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
-import dotenv
 import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-env = environ.Env()
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -139,6 +138,8 @@ LOGOUT_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+env = environ.Env()
+env.read_env(os.path.join(BASE_DIR, '.env'))
 API_KEY = env('API_KEY')
 
 
