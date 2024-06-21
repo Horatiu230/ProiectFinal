@@ -12,6 +12,10 @@ from app1.models import ConfirmationOfPresence, Address
 from app1.models import PersonalizedInvitation
 import imgkit
 import pdfkit
+
+from weddingInvite.settings import API_KEY
+
+
 # import wkhtmltoimage
 
 
@@ -200,6 +204,11 @@ class MapsChurchViewClient(LoginRequiredMixin, ListView):
         return reverse('guests:clientchurchlocation')
 
 
+def my_view(request):
+    context = {
+        'api_key': API_KEY,
+    }
+    return render(request, 'app1/restaurant_location_api.html', context)
 
 
 
