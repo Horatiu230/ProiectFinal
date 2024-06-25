@@ -160,7 +160,10 @@ cython_debug/
 #.idea/
 
 # myfiles
-/1_Django_installation_commands.txt
+1_Django_installation_commands.txt
+2_Django_working_commands.txt
+3_Django_general_theory.txt
+4_My_Project_info.txt
 
 
 
